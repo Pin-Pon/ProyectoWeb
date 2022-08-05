@@ -5,7 +5,7 @@ def inicio(request):
     return render(request, "ProyectoWebApp/inicio.html")
 
 def login(request):
-    return render(request,"ProyectowebApp/login.html")
+    return render(request,"ProyectoWebApp/login.html")
 
 def eventos(request):
     return render(request, "ProyectoWebApp/eventos.html")
