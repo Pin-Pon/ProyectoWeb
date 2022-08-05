@@ -7,9 +7,10 @@ def inicio(request):
 def login(request):
     return render(request,"ProyectoWebApp/login.html")
 
-def eventos(request):
-    mostrar =eventos.objects.all()
-    return render(request, "ProyectoWebApp/eventos.html", {"mostrar":eventos})
+def evento(request):
+    mostrar = eventos.objects.all()
+    print(mostrar)
+    return render(request, "ProyectoWebApp/eventos.html", {"mostrar":mostrar})
 
 def calendario(request):
     return render(request, "ProyectoWebApp/calendario.html")
