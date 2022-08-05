@@ -1,10 +1,11 @@
 
+from distutils.command.upload import upload
 from django.db import models
 
 class eventos(models.Model):
     titulo = models.CharField(max_length=255)
     categoria = models.CharField(max_length=255)
-    imagen = models.ImageField()
+    imagen = models.ImageField(upload_to='eventos')
     created  = models.DateTimeField(auto_now_add=True) #cuando se creo fecha el evento
     updated  =models.DateTimeField(auto_now_add=True)  #cuando se elimino fecha
 #HACER LA MIGRACION MALDITAAA....
