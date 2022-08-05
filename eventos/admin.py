@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import eventos
+
+from ProyectoWeb.usuarios.models import Usuario
+from .models import eventos 
 
 # Register your models here.
 class eventosAdmin(admin.ModelAdmin):
