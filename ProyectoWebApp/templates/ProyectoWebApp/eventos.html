@@ -3,16 +3,16 @@
 {% load static %}
 
 {% block content %}
-
+<div><p>
     {% for evento in mostrar %}
 
-   <h2>{{ evento.titulo}}</h2>
+   <h2 style="color: aliceblue;">{{ evento.titulo}}</h2>
 
-   <img src="{{evento.imagen.url}}"
+   <p><img src="{{evento.imagen.url}}"</p>
 
-   <p>{{ evento.categoria}}</p>
+   <h2 style="color: aliceblue;">{{ evento.categoria}}</h2>
 
-
+</p></div>
     {% endfor %} -->
 {% endblock %}
 
