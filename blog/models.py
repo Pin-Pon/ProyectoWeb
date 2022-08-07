@@ -21,8 +21,8 @@ class Post(models.Model):
     titulo = models.CharField(max_length=255)
     contenido = models.CharField(max_length=255)
     imagen = models.ImageField(upload_to='blog',null=True,blank=True) #pones o no la imagen entendes!!!
-    autor = models.ForeignKey("usuarios.Usuario", on_delete=models.CASCADE)
-    categorias = models.ManyToManyField(Categoria)
+    autor = models.ForeignKey("usuarios.Usuario", on_delete=models.CASCADE,related_name="categoria_post")
+    categorias = models.ManyToManyField(Categoria)    #relacion de n-n 
     created  = models.DateTimeField(auto_now_add=True) 
     updated  =models.DateTimeField(auto_now_add=True)
 
