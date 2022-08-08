@@ -8,6 +8,7 @@ class eventos(models.Model):
     imagen = models.ImageField(upload_to='eventos') # ,null=True,blank=True????  creo una carpeta donde le decimos q guarde'__>eventos' dentro de la carpeta media para los archivos media
     created  = models.DateTimeField(auto_now_add=True) #cuando se creo fecha el evento
     updated  =models.DateTimeField(auto_now_add=True)  #cuando se elimino fecha
+  
 #HACER LA MIGRACION MALDITAAA....
 
     class Meta:
