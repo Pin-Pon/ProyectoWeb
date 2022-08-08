@@ -15,8 +15,8 @@ def login(request):
 def calendario(request):
     return render(request, "ProyectoWebApp/calendario.html")
 
-def blog(request):
-    return render(request, "ProyectoWebApp/blog.html")
+# def blog(request):
+#     return render(request, "ProyectoWebApp/blog.html") la movemos a la appp como todas
 
 def contacto(request):
     return render(request, "ProyectoWebApp/contacto.html")    

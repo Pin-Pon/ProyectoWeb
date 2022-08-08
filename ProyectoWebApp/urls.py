@@ -9,9 +9,7 @@ urlpatterns = [
    
     path('',views.inicio, name="Inicio"),
     path('login',views.login, name="Login"),
-  #
     path('calendario',views.calendario, name="Calendario"),
-    path('blog',views.blog, name="Blog"),
     path('contacto',views.contacto, name="Contacto"),      
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) #mostrar la foto en el servidor

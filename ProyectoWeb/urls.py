@@ -16,10 +16,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-
+#urls general registrar la urls de las apps
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('eventos/',include('eventos.urls')),  #registro la app
+    path('eventos/',include('eventos.urls')), 
+    path('blog/',include('blog.urls')), #registro la app
     path('',include('ProyectoWebApp.urls')),   #registro la app
 ]
