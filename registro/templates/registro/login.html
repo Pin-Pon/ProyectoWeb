@@ -7,7 +7,17 @@
 
 
 
-<div><p style="color:white">estoy en registro</p></div>
+<div class="contenedorFormulario">
+  {% if "valido" in request.get %}
+
+   <p>Informacion correcta</p>
+  {% endif%}
+  <form action="" method="post" style="text-align:center">
+    {% csrf_token %}
+      <table style="color:white; margin: 20px auto;">{{miFormulario.as_table}}</table>
+      <input type="submit" value="Registrar" style="width:100px;">
+  </form>
+</div>
 
 {% endblock %}
 
