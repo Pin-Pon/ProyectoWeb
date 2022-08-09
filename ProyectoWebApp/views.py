@@ -4,8 +4,8 @@ from django.shortcuts import render, HttpResponse
 def inicio(request):
     return render(request, "ProyectoWebApp/inicio.html")
 
-def login(request):
-    return render(request,"ProyectoWebApp/login.html")
+# def login(request):
+#     return render(request,"ProyectoWebApp/login.html")
 
 # def evento(request):
 #     mostrar = eventos.objects.all()   #cambiamos a la vista de la aplicacion
