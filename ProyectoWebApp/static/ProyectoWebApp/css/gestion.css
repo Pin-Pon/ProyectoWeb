@@ -217,6 +217,7 @@ p {
 
 
 
+
 @media (min-width: 992px) {
   .list-hours {
     width: 50%;
@@ -276,4 +277,11 @@ ul.errorlist{
   padding-top: .75rem;
   font-style: italic;
   color: red;
+}
+.linksCategorias{
+  color: white !important;
+  text-decoration: underline;
+}
+.linksCategorias:hover{
+  text-decoration: none;
 }

@@ -38,19 +38,19 @@
           <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Inicio' %}">Inicio</a>
           </li>
-          <li class="nav-item {% if request.path == '/eventos' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/eventos/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Eventos' %}">Eventos</a>
           </li>
-          <li class="nav-item {% if request.path == '/login' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/login/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Login' %}">Registrate</a>
           </li>
-          <li class="nav-item {% if request.path == '/calendario' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/calendario/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Calendario' %}">Calendario</a>
           </li>
-          <li class="nav-item {% if request.path == '/contacto' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
           </li>
-          <li class="nav-item {% if request.path == '/blog' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path|slice:':6' == '/blog/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
           </li>
          
