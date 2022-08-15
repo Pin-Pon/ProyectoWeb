@@ -5,20 +5,73 @@
 {% block content %}
 
 
+<h1 style="color:white ;">Hola {{user}} </h1>
+<div class="container">
+	<div class="row">
 
 
-<h1>Hola {{user}} </h1>
 {% for evento in agenda %}
+<div class="col-md-4">
+  <div class="card" style="width: 100% ; margin: 5px 5px;">
+	<img src="{{evento.imagen.url}}" class="card-img-top">
+	<div class="card-body" style="text-align:center;">
+		<h7 class="card-title">{{evento.titulo}}</h7>
+		<p class="card-text">{{evento.categoria}}</p>
+
+
+		 
+	</div>
+	<div class="card-footer text-center">
+		<a href="#" class="btn btn-success">Asistir</a> 
+	</div>
+ </div>
+</div>
+
+{% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}
 
 
 
-    
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div><p></p></div> -->
+<!-- ink href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<lscript src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
+<!-- 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">		
 	<div class="card">
 		<div class="row row-striped" style="color:white ;">
@@ -36,9 +89,6 @@
 				<p style="color:white ;">DETALLE: La actividad consiste en algo, y el lugar será en dirección en Av. Siempreviva 742.</p>
 				<p style="color:white ;">MODALIDAD: La actividad consiste en algo, y el lugar será en dirección en Av. Siempreviva 742.</p>
 			</div>
-		</div>
-		<br>
-{% endfor %}
-{% endblock %}
-<!-- <div><p></p></div> -->
+		</div> -->
+		<!-- <br> --> -->
 
