@@ -15,15 +15,13 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
-from django.contrib.auth import views as auth_views
+from django.urls import include , path
+
 #urls general registrar la urls de las apps
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-  #  path('accounts/', include('django.contrib.auth.urls')),
-    
-    # path('login/', auth_views.LoginView.as_view(template_name = "login.html") , name= "login" ),
+    #includes de las apps
     path('eventos/',include('eventos.urls')), 
     path('registro/',include('registro.urls')),
     path('blog/',include('blog.urls')), #registro la app
