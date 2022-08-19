@@ -1,10 +1,10 @@
 {% extends "ProyectoWebApp/base.html" %}
-{% load static %}
+
 {% block content %}
 <!-- {% if user.is_authenticated %} -->
 <h1>Evento</h1>
-<form method="POST">
-{{ form.as_p }}          <!-- el formulario esta ak -->
-<button type="submit" class="btn btn-success">Crear</button>
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}         
+    <button type="submit" class="btn btn-success">Crear</button>
 </form>
 {% endblock %}

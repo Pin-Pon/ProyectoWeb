@@ -16,5 +16,8 @@ class CrearEvento( LoginRequiredMixin,CreateView):
         form_class = CrearEventoForm
         template_name = 'eventos/crear_eventos.html'
 
+        def get_success_url(self, **kwargs): # Redirecciona a otra pagina despues de crear un evento
+              return reverse('eventos')
+
 
       
