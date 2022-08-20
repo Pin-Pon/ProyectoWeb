@@ -6,6 +6,8 @@ from .views import Registro
 
 
 urlpatterns = [
+    
+    
     path('',Registro.as_view(), name="Registro"),     
 ]
 

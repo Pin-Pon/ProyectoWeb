@@ -11,7 +11,7 @@ def evento(request):
     print(mostrar)
     return render(request, "eventos/eventos.html", {"mostrar":mostrar})
 
-class CrearEvento( LoginRequiredMixin,CreateView):
+class CrearEvento(CreateView):
         model = eventos
         form_class = CrearEventoForm
         template_name = 'eventos/crear_eventos.html'
