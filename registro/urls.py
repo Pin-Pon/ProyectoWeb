@@ -2,13 +2,16 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 
 
-from .views import Registro 
+from .views import Registro , login_view 
 
 
 urlpatterns = [
     
     
-    path('',Registro.as_view(), name="Registro"),     
+    path('',Registro.as_view(), name="Registro"), 
+    path('login/',login_view, name="login"),
+    
+ 
 ]
 
 #vista basada en clcs para el login

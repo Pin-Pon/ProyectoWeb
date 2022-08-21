@@ -23,7 +23,6 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/eventos/'
 LOGOUT_REDIRECT_URL ='/eventos/'
 
-LOGOUT_REDIRECT_URL = '/Inicio'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -68,7 +67,7 @@ ROOT_URLCONF = 'ProyectoWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

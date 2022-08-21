@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from usuarios.models import Usuario
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
@@ -21,7 +21,13 @@ class Registro(View):
         else:
             for msg in form.error_messages:
                 messages.error(request, f"{msg}: {form.error_messages[msg]}")
-            return render(request, 'registro/registro.html', {'form': form})    
+            return render(request, 'registro/registro.html', {'form': form})  
+
+
+def login_view(request):
+    form = AuthenticationForm
+    return render (request, "login.html",{"form" : form})
+         
       
     
 
