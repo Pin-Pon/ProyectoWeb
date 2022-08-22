@@ -24,9 +24,9 @@ class Registro(View):
             return render(request, 'registro/registro.html', {'form': form})  
 
 
-def login_view(request):
-    form = AuthenticationForm
-    return render (request, "login.html",{"form" : form})
+# def login_view(request):
+#     form = AuthenticationForm
+#     return render (request, "login.html",{"form" : form})
          
       
     

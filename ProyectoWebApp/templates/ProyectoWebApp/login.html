@@ -6,6 +6,7 @@
 {% block content %}
 <form method="POST" action="" style="color:white;">
  {% csrf_token %}
+ {% include 'includes/error_forms.html' %}
   
  <div style="width:75% ;margin:auto;">
 {{ form|crispy }}
