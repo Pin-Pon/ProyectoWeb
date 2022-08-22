@@ -13,11 +13,13 @@ def inicio(request):
 #     mostrar = eventos.objects.all()   #cambiamos a la vista de la aplicacion
 #     print(mostrar)
 #     return render(request, "ProyectoWebApp/eventos.html", {"mostrar":mostrar})
+# def cerrar_sesion(request):
+#     return render(request, "ProyectoWebApp/inicio.html")
 
 
-def login_view(request):
-    form = AuthenticationForm
-    return render (request, "ProyectoWebApp/login.html",{"form" : form})
+# def login_view(request):
+#     form = AuthenticationForm
+#     return render (request, "ProyectoWebApp/login.html",{"form" : form})
 
 def calendario(request):
     agenda=eventos.objects.all()

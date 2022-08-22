@@ -1,9 +1,24 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
+from django.views.generic.edit import CreateView
+from .forms import FormularioRegistro
 from usuarios.models import Usuario
+from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+
+
+
+
+
+#   class Registro(CreateView):
+#       model = Usuario
+#       form_class = FormularioRegistro
+#       template_name = "registro/registro.html"
+
+#       def get_success_url(self, **kwargs):
+#           return reverse("inicio") 
 
 
 class Registro(View):
@@ -16,17 +31,21 @@ class Registro(View):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            login(request, form.cleaned_data['username'])
-            return redirect('calendario')
+            return redirect("inicio")
         else:
-            for msg in form.error_messages:
-                messages.error(request, f"{msg}: {form.error_messages[msg]}")
-            return render(request, 'registro/registro.html', {'form': form})  
+            return render(request, 'registro/registro.html', {'form': form})    
+
+     
+     
 
 
-# def login_view(request):
-#     form = AuthenticationForm
-#     return render (request, "login.html",{"form" : form})
+
+
+
+# def cerrar_sesion(request):
+#     logout(request)
+#     return redirect("inicio")
+
          
       
     

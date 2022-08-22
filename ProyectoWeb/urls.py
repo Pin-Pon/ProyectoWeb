@@ -22,7 +22,8 @@ from django.conf import settings
 #urls general registrar la urls de las apps
 
 urlpatterns = [
-    # path('login/', auth_views.LoginView.as_view(template_name = "login.html") , name= "login" ), 
+    path('login/', auth_views.LoginView.as_view(template_name = "ProyectoWebApp/login.html") , name= "login" ),
+    path('logout/',auth_views.LogoutView.as_view(template_name="ProyectoWebApp/inicio.html"), name="logout"), 
     path('admin/', admin.site.urls),
     
     
