@@ -9,13 +9,13 @@ class FormularioRegistro(UserCreationForm):
         model = Usuario
         fields = ["first_name", "last_name", "username", "password1", "password2", "email", "telefono"]
         labels = {
-            'first_name' : '',
-            'last_name' : '',
-            'username' : '',
-            'password1' : '',
-            'password2' : '',
-            'email' : '',
-            'telefono' : '',
+            'first_name' : 'Nombre',
+            'last_name' : 'Apellido',
+            'username' : 'Nombre de usuario',
+            'password1' : 'Contraseña',
+            'password2' : 'Confirmar contraseña',
+            'email' : 'Correo electronico',
+            'telefono' : 'Telefono',
         }
 
         widgets = {

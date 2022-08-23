@@ -16,13 +16,13 @@ class CrearEventoForm(forms.ModelForm):
         fields = ['titulo', 'categoria', 'imagen', 'fecha', 'hora', 'modalidad', 'lugar', 'descripcion']	
         labels = {
             'imagen': 'Imagen del evento',
-            'titulo' : '',
+            'titulo' : 'Titulo del evento',
             'fecha' : '',
             'hora' : '',
-            'lugar' : '',
+            'lugar' : 'Lugar del evento',
             'categoria' : 'Categoría',
             'modalidad' : 'Modalidad',
-            'descripcion' : '',
+            'descripcion' : 'Descripción',
 
         }
 

@@ -1,5 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
+from django.urls import path
+from . import views
 
 
 from .views import Registro 
@@ -8,7 +10,7 @@ from .views import Registro
 urlpatterns = [
     
     
-    path('',Registro.as_view(), name="Registro"), 
+    path('',views.Registro.as_view(), name="Registro"), 
     # path('login/',login_view, name="login"),
     
  
