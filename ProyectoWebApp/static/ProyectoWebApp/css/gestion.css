@@ -293,3 +293,10 @@ ul.errorlist{
   padding: 1px 0px;
 
 }
+.MenuDesplegable{
+  background-color: rgba(24, 64, 8);
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 20px;
+  padding: 1px 0px;
+}

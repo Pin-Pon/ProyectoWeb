@@ -4,16 +4,16 @@
 
 {% block content %}
 
-    <h1 style="color:white ;width:50% ;margin:auto;"> Editar Evento</h1>
+    <h1 style="color:white ;width:50% ;margin:auto;"> Eliminar Evento</h1>
     <div class= "contenedorFormulario">
     <form method="POST"   enctype="multipart/form-data" style="color:white;"> {% csrf_token %}
-        
+        {% include 'includes/forms.html' %}
       
-     
+        &nbsp; &nbsp; <strong>Desea eliminar el evento?&nbsp; &nbsp; {{evento.id}}</strong> </p>
 
         <div style="width:75% ;margin:auto;">
-        {{ form|crispy }}        
-        <button type="submit" class="btn btn-success">Actualizar</button>
+            
+        <button type="submit" class="btn btn-success">Eliminar</button>
         </div>
     </div>
     </form>

@@ -1,5 +1,5 @@
 from django.urls import reverse
-from core.mixins import SuperUserRequiredMixin
+from core.mixins import SuperUsuarioMixin
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from eventos.models import eventos
@@ -12,7 +12,7 @@ def evento(request):
     print(mostrar)
     return render(request, "eventos/eventos.html", {"mostrar":mostrar})
 
-class CrearEvento(SuperUserRequiredMixin,CreateView):
+class CrearEvento(SuperUsuarioMixin,LoginRequiredMixin,CreateView):
         model = eventos
         form_class = CrearEventoForm
         template_name = 'eventos/crear_eventos.html'
@@ -20,13 +20,23 @@ class CrearEvento(SuperUserRequiredMixin,CreateView):
         def get_success_url(self): # Redirecciona a otra pagina despues de crear un evento
               return reverse('EventosNuevos')
 
-class Editar(LoginRequiredMixin, UpdateView):
+class Editar(SuperUsuarioMixin,LoginRequiredMixin, UpdateView):
     template_name="eventos/editar.html"
     model=eventos
     form_class = CrearEventoForm
 
     def get_success_url(self, **kwargs):
-        return reverse('eventos')             
+        return reverse('EventosNuevos')   
+
+
+class Eliminar(SuperUsuarioMixin,LoginRequiredMixin, DeleteView):
+    template_name="eventos/eliminar.html"
+    model=eventos
+  
+    
+    
+    def get_success_url(self, **kwargs):
+        return reverse('EventosNuevos')
 
 
       
