@@ -15,7 +15,7 @@ class Modalidad(models.Model):
     def __str__(self):
         return self.nombre
 
-class eventos(models.Model):
+class Eventos(models.Model):
     titulo = models.CharField(max_length=255)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null= True, blank= True)
     imagen = models.ImageField(upload_to='eventos')
@@ -24,8 +24,8 @@ class eventos(models.Model):
     modalidad= models.ForeignKey(Modalidad, on_delete=models.SET_NULL, null= True, blank= True)
     lugar = models.CharField(max_length=255, null= True)
     descripcion = models.TextField(null=True, blank=True)
-    participantes = models.ManyToManyField(Usuario, related_name = "participantes")
-    creador = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="mis_eventos", null=True) # ,null=True,blank=True????  creo una carpeta donde le decimos q guarde'__>eventos' dentro de la carpeta media para los archivos media
+    participantes = models.ManyToManyField(Usuario, related_name = "participantes", null= True, blank= True)
+    creador = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="mis_eventos", null=True,blank= True) # ,null=True,blank=True????  creo una carpeta donde le decimos q guarde'__>eventos' dentro de la carpeta media para los archivos media
     created  = models.DateTimeField(auto_now_add=True) #cuando se creo fecha el evento
     updated  =models.DateTimeField(auto_now_add=True)  #cuando se elimino fecha    
   
@@ -44,5 +44,9 @@ class eventos(models.Model):
 
 
 class CsvFile(models.Model):
-    csv_file = models.FileField(upload_to='documents')           
+    csv_file = models.FileField(upload_to='documents')  
+
+
+    def __str__(self):
+        return self.csv_file.name          
 

@@ -5,8 +5,10 @@
 
 {% for document in object_list %}
 
-<a href="{{ documents.descargar.url }}" download  class="btn btn-dark float-right" >Download</a>
+<a href="{%url 'Descargar'  document.id %}"  download  class="btn btn-dark float-right" >{{document.id}}</a>
 
 
 {% endfor %}
 {% endblock %}
+
+<!-- {{ documents.descargar.url }} -->

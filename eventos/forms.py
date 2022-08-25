@@ -1,5 +1,5 @@
 from django import forms
-from .models import eventos
+from .models import Eventos
 
 
 class DateInput(forms.DateInput):
@@ -12,7 +12,7 @@ class TimeInput(forms.TimeInput):
 
 class CrearEventoForm(forms.ModelForm):
     class Meta:
-        model = eventos
+        model = Eventos
         fields = ['titulo', 'categoria', 'imagen', 'fecha', 'hora', 'modalidad', 'lugar', 'descripcion']	
         labels = {
             'imagen': 'Imagen del evento',

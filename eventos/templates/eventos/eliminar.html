@@ -7,7 +7,7 @@
     <h1 style="color:white ;width:50% ;margin:auto;"> Eliminar Evento</h1>
     <div class= "contenedorFormulario">
     <form method="POST"   enctype="multipart/form-data" style="color:white;"> {% csrf_token %}
-        {% include 'includes/forms.html' %}
+      {{ form.crispy }}
       
         &nbsp; &nbsp; <strong>Desea eliminar el evento?&nbsp; &nbsp; {{evento.id}}</strong> </p>
 

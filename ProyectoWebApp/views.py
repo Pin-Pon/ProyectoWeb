@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
-from eventos.models import eventos
+from eventos.models import Eventos
 #from eventos.models import eventos llevamos la importacion a la views de la app eventos propia
 # Create your views here.
 def inicio(request):
@@ -22,7 +22,7 @@ def inicio(request):
 #     return render (request, "ProyectoWebApp/login.html",{"form" : form})
 
 def calendario(request):
-    agenda=eventos.objects.all()
+    agenda=Eventos.objects.all()
     return render(request, "ProyectoWebApp/calendario.html", {"agenda":agenda}) #agenda es una variable que se le pasa a la vista
 
 # def blog(request):
