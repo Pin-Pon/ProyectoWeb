@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-
+from django.utils import timezone
 import os
 from pathlib import Path
 from django.contrib.messages import constants as mensajes_de_error
@@ -126,7 +126,12 @@ AUTH_PASSWORD_VALIDATORS = [
 #LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'es-ar'
 
-TIME_ZONE = 'UTC'
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
+timezone.activate(TIME_ZONE)
+
+
+
 
 USE_I18N = True
 
