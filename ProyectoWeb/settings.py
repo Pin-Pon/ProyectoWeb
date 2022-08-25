@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'blog',
     'registro',
     'crispy_forms',
+   
 ]
 
 MIDDLEWARE = [
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'PuebloNew',
+        'NAME': 'OTRO',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

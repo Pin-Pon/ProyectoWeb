@@ -40,5 +40,9 @@ class eventos(models.Model):
         return self.titulo 
 
     def cant_participantes(self):
-        return self.participantes.count()    
+        return self.participantes.count() 
+
+
+class CsvFile(models.Model):
+    csv_file = models.FileField(upload_to='documents')           
 

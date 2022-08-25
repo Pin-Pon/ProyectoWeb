@@ -2,7 +2,8 @@ from django.urls import reverse
 from core.mixins import SuperUsuarioMixin
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from eventos.models import eventos
+from django.views import generic
+from eventos.models import eventos, CsvFile
 from django.views.generic.edit import CreateView , UpdateView , DeleteView
 from .forms import CrearEventoForm
 
@@ -38,5 +39,20 @@ class Eliminar(SuperUsuarioMixin,LoginRequiredMixin, DeleteView):
     def get_success_url(self, **kwargs):
         return reverse('EventosNuevos')
 
+class CsvUploadView(generic.CreateView):  #para subir un archivo csv
+   model = CsvFile
+   fields = ['csv_file']
+   template_name = 'eventos/cargar.html'
 
+   def get_success_url(self): # Redirecciona a otra pagina despues de crear un evento
+    return reverse('EventosNuevos')
+
+
+class CsvDownloadView(generic.ListView):  #para descargar un archivo csv  csv_file
+
+    model = CsvFile
+    fields = ['csv_file']
+    template_name = 'eventos/descargar.html'
+    def get_success_url(self):
+        return reverse('EventosNuevos')
       

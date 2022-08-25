@@ -10,5 +10,8 @@ urlpatterns = [
     path('crear/',views.CrearEvento.as_view(),name="CrearEvento"),
     path("editar/<int:pk>/", views.Editar.as_view(), name="editar"),
     path("eliminar/<int:pk>/", views.Eliminar.as_view(), name="Eliminar"),
+    path("cargar/", views.CsvUploadView.as_view(), name="Cargar"),
+    path("descargar/", views.CsvDownloadView.as_view(), name="Descargar"),
+   
     
 ]
