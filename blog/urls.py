@@ -7,5 +7,7 @@ urlpatterns = [
     path('',views.blog, name="Blog"),
     path('categoria/<int:categoria_id>/', views.categoria, name="categoria"),
     path('crearpost/',views.CrearPost.as_view(),name="CrearPost"),
+    path('editarpost/<int:pk>/',views.EditarPost.as_view(),name="EditarPost"),
+
         
 ]

@@ -1,0 +1,20 @@
+{% extends "ProyectoWebApp/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <h1 style="color:white ;width:50% ;margin:auto;"> Eliminar Post</h1>
+    <div class= "contenedorFormulario">
+    <form method="POST"   enctype="multipart/form-data" style="color:white;"> {% csrf_token %}
+      {{ form.crispy }}
+      
+        &nbsp; &nbsp; <strong>Desea eliminar la publicación?&nbsp; &nbsp; {{post.id}}</strong> </p>
+
+        <div style="width:75% ;margin:auto;">
+            
+        <button type="submit" class="btn btn-success">Eliminar</button>
+        </div>
+    </div>
+    </form>
+{% endblock %}

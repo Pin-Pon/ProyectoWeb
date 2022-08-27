@@ -8,12 +8,16 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
-from django.views.generic.edit import CreateView , UpdateView , DeleteView
+from django.views.generic.edit import CreateView , UpdateView 
 from .forms import CrearPostForm
 
 from blog.models import Post , Categoria
 
 # Create your views here.
+
+
+
+
 def blog(request):
     posts=Post.objects.all()
     return render(request, "blog/blog.html", {"posts": posts})
@@ -27,9 +31,21 @@ def categoria(request,categoria_id):
 
 
 class CrearPost(SuperUsuarioMixin,LoginRequiredMixin,CreateView):
+
         model = Post
         form_class = CrearPostForm
         template_name = 'blog/crearpost.html'
 
         def get_success_url(self): # Redirecciona a otra pagina despues de crear un evento
               return reverse('Blog')
+
+
+class EditarPost(SuperUsuarioMixin,LoginRequiredMixin, UpdateView):
+    template_name="blog/editarpost.html"
+    model=Post
+    form_class = CrearPostForm
+
+    def get_success_url(self, **kwargs):
+        return reverse('Blog')   
+
+   

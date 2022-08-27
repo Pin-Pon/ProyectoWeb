@@ -24,9 +24,8 @@
 	</div>
 	<div class="card-footer text-center">
 		{% if user.es_admin or user.is_superuser %}
-		<a href=" {% url 'CrearEvento' %}   " class="btn btn-success">Crear</a>&nbsp; &nbsp; 
-		<a href=" {% url 'editar' evento.id %}   "><button type="button" class="btn btn-success">Editar</button></a>&nbsp; &nbsp; 
-		<a href=" {% url 'Eliminar' evento.id%}"><button type="button" class="btn btn-success">Eliminar</button></a>&nbsp; &nbsp; 
+		<a href=" {% url 'Cargar' %}   " class="btn btn-success">Cargar archivo</a>&nbsp; &nbsp; 
+ 
 	    {% endif %}
 		<br><br>
         {% if user.is_authenticated %}

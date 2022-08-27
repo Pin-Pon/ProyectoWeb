@@ -3,6 +3,8 @@ from core.mixins import SuperUsuarioMixin
 from django.shortcuts import render
 import mimetypes
 import os
+from ProyectoWebApp  import urls
+
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -17,6 +19,7 @@ def evento(request):
     mostrar = Eventos.objects.all()
     print(mostrar)
     return render(request, "eventos/eventos.html", {"mostrar":mostrar})
+  
 
 class CrearEvento(SuperUsuarioMixin,LoginRequiredMixin,CreateView):
         model = Eventos
@@ -79,18 +82,37 @@ def descargarArchivo(request,pk):
     return response
 
 
-def Asistir(request, pk):
-    eventos = get_object_or_404(Eventos, id= request.POST.get("evento_id"))
-    asiste = False
-    if eventos.participantes.filter(id = request.user.id).exists():
-        eventos.participantes.remove(request.user)
-        asiste = False
-    else:
+def Asistir(request, id_usuario, id_evento):
+    eventos = get_object_or_404(Eventos, id= id_evento)
+    
+    if eventos.participantes.filter(id = id_usuario).exists():
         eventos.participantes.add(request.user)
-        asiste = True
+    eventos.save()
       
-    return HttpResponseRedirect(reverse('EventosNuevos', args=[str(pk)]))
+    return HttpResponseRedirect(reverse('ProyectoWebApp:Calendario', args=[id_usuario, id_evento]))
+
+def EliminarAsistencia(request, id_usuario, id_evento):
+    eventos = get_object_or_404(Eventos, id= id_evento)
+    if eventos.participantes.filter(id = id_usuario).exists():
+        eventos.participantes.remove(request.user)
+    eventos.save() 
+      
+    return HttpResponseRedirect(reverse('ProyectoWebApp:Calendario', args=[id_usuario,id_evento]))
 
 
 
+
+
+
+
+    # def get_context_data(self,*args, **kwargs):
+    #     context = super(DetalleEvento, self).get_context_data(**kwargs)
+    #     asiste = False
+    #     evento = get_object_or_404(Evento, id= self.kwargs["pk"]) 
+    #     cant_participantes = evento.cant_participantes()
+    #     if evento.participantes.filter(id= self.request.user.id).exists():
+    #         asiste = True
+    #     context["asiste"] = asiste
+    #     context["cant_participantes"] = cant_participantes
+    #     return context
         

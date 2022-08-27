@@ -29,12 +29,32 @@
 		<a href=" {% url 'Eliminar' evento.id%}"><button type="button" class="btn btn-success">Eliminar</button></a>&nbsp; &nbsp; 
 	    {% endif %}
 		<br><br>
-		<a class="btn btn-success">Asistir</a> 
+    	{% if user.is_authenticated %}
+		<a href="{% url 'asistir' user.id evento.id  %}" class="btn btn-success" >Asistir a evento-- </a>&nbsp; &nbsp; 
+				  
+		<a href=" {% url 'EliminarAsistencia' user.id evento.id%}" class="btn btn-success">Eliminar Asistencia</a>&nbsp; &nbsp; 
+		<button class="btn btn-danger me-md-2"  >{{evento.participantes}}</button>&nbsp; &nbsp; 
+		
+		{% else %}
+				   
+		   <a href=" {% url 'login' %} " class="btn btn-success">Asistir</a>
+				 
+				  
+				  {% endif %}
+				  
+				
+				
+		
+		  </div>
+		 
+
+		
 	</div>
  </div>
 </div>
-
+   
 {% endfor %}
+
   </div>
 </div>
 
