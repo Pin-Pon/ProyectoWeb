@@ -17,8 +17,10 @@ urlpatterns = [
     
     
    
-    path('calendario',views.calendario, name="Calendario"),
-    path('contacto',views.contacto, name="Contacto"),      
+    path('calendario/',views.calendario, name="Calendario"),
+    path('contacto',views.contacto, name="Contacto"),
+    path("asistir/<int:id_usuario>/<int:id_evento>", views.Asistir, name = "asistir"),
+    path("eliminarasistencia/<int:id_usuario>/<int:id_evento>", views.EliminarAsistencia, name = "EliminarAsistencia"),      
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) #mostrar la foto en el servidor
 

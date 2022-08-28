@@ -27,7 +27,7 @@ class CrearEvento(SuperUsuarioMixin,LoginRequiredMixin,CreateView):
         template_name = 'eventos/crear_eventos.html'
 
         def get_success_url(self): # Redirecciona a otra pagina despues de crear un evento
-              return reverse('EventosNuevos')
+              return reverse('eventos:EventosNuevos')
 
 class Editar(SuperUsuarioMixin,LoginRequiredMixin, UpdateView):
     template_name="eventos/editar.html"
@@ -35,7 +35,7 @@ class Editar(SuperUsuarioMixin,LoginRequiredMixin, UpdateView):
     form_class = CrearEventoForm
 
     def get_success_url(self, **kwargs):
-        return reverse('EventosNuevos')   
+        return reverse('eventos:EventosNuevos')   
 
 
 class Eliminar(SuperUsuarioMixin,LoginRequiredMixin, DeleteView):
@@ -45,7 +45,7 @@ class Eliminar(SuperUsuarioMixin,LoginRequiredMixin, DeleteView):
     
     
     def get_success_url(self, **kwargs):
-        return reverse('EventosNuevos')
+        return reverse('eventos:EventosNuevos')
 
 class CsvUploadView(generic.CreateView):  #para subir un archivo csv
    model = CsvFile
@@ -57,7 +57,7 @@ class CsvUploadView(generic.CreateView):  #para subir un archivo csv
     return CsvFile.objects.all().order_by('-id')
 
    def get_success_url(self): # Redirecciona a otra pagina despues de crear un evento
-    return reverse('EventosNuevos')
+    return reverse('eventos:EventosNuevos')
 
 
 class CsvDownloadView(generic.ListView):  #para descargar un archivo csv  csv_file
@@ -68,7 +68,7 @@ class CsvDownloadView(generic.ListView):  #para descargar un archivo csv  csv_fi
 
 
     def get_success_url(self):
-        return reverse('EventosNuevos')
+        return reverse('eventos:EventosNuevos')
 
 def descargarArchivo(request,pk):
     csv_file = CsvFile.objects.get(pk=pk)
@@ -81,7 +81,7 @@ def descargarArchivo(request,pk):
     response['Content-Disposition'] = "attachment; filename=%s" % filename
     return response
 
-
+'''
 def Asistir(request, id_usuario, id_evento):
     eventos = get_object_or_404(Eventos, id= id_evento)
     
@@ -98,7 +98,7 @@ def EliminarAsistencia(request, id_usuario, id_evento):
     eventos.save() 
       
     return HttpResponseRedirect(reverse('ProyectoWebApp:Calendario', args=[id_usuario,id_evento]))
-
+'''
 
 
 

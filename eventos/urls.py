@@ -2,7 +2,7 @@ from django.urls import path
 
 
 from . import views
-
+app_name = 'eventos'
 
 
 urlpatterns = [
@@ -13,8 +13,8 @@ urlpatterns = [
     path("cargar/", views.CsvUploadView.as_view(), name="Cargar"),
     path("descargar/<int:pk>/", views.descargarArchivo, name="Descargar"),
     path("verarchivo/",views.CsvDownloadView.as_view(), name="VerArchivo"),
-    path("asistir/<int:id_usuario>/<int:id_evento>", views.Asistir, name = "asistir"),
-    path("eliminarasistencia/<int:id_usuario>/<int:id_evento>", views.EliminarAsistencia, name = "EliminarAsistencia"),
+    # path("asistir/<int:id_usuario>/<int:id_evento>", views.Asistir, name = "asistir"),
+    # path("eliminarasistencia/<int:id_usuario>/<int:id_evento>", views.EliminarAsistencia, name = "EliminarAsistencia"),
    
     
 ]

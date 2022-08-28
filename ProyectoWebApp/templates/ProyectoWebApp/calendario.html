@@ -30,9 +30,9 @@
 	    {% endif %}
 		<br><br>
     	{% if user.is_authenticated %}
-		<a href="{% url 'asistir' user.id evento.id  %}" class="btn btn-success" >Asistir a evento-- </a>&nbsp; &nbsp; 
+		<a href="{% url 'ProyectoWebApp:asistir' user.id evento.id  %}" class="btn btn-success" >Asistir a evento-- </a>&nbsp; &nbsp; 
 				  
-		<a href=" {% url 'EliminarAsistencia' user.id evento.id%}" class="btn btn-success">Eliminar Asistencia</a>&nbsp; &nbsp; 
+		<a href=" {% url 'ProyectoWebApp:EliminarAsistencia' user.id evento.id%}" class="btn btn-success">Eliminar Asistencia</a>&nbsp; &nbsp; 
 		<button class="btn btn-danger me-md-2"  >{{evento.participantes}}</button>&nbsp; &nbsp; 
 		
 		{% else %}

@@ -52,14 +52,14 @@
             <a class="nav-link text-uppercase text-expanded" href="{% url 'ProyectoWebApp:Inicio' %}">Inicio</a>
           </li>
           <li class="nav-item {% if request.path == '/eventos/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'EventosNuevos' %}">Eventos</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'eventos:EventosNuevos' %}">Eventos</a>
           </li>
         
           <li class="nav-item {% if request.path == '/calendario/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'ProyectoWebApp:Calendario' %}">Calendario</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'ProyectoWebApp:Calendario'%}">Calendario</a>
           </li>
           <li class="nav-item {% if request.path == 'eventos/verarchivo/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'VerArchivo' %}">Recursos</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'eventos:VerArchivo' %}">Recursos</a>
           </li>
           <li class="nav-item {% if request.path|slice:':6' == '/blog/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
