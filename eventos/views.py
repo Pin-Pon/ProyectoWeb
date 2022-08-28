@@ -39,4 +39,5 @@ class Eliminar(SuperUsuarioMixin,LoginRequiredMixin, DeleteView):
         return reverse('EventosNuevos')
 
 
+
       
