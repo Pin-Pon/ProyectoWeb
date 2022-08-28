@@ -1,10 +1,11 @@
 from django.urls import reverse
+from django.views import generic
 from django.shortcuts import render, HttpResponse
 from ProyectoWeb.ProyectoWeb.settings import BASE_DIR
 from ProyectoWeb.eventos.models import CsvFile
 from core.mixins import SuperUsuarioMixin
 import os
-
+import mimetypes
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from eventos.models import eventos
@@ -42,7 +43,7 @@ class Eliminar(SuperUsuarioMixin,LoginRequiredMixin, DeleteView):
     
     def get_success_url(self, **kwargs):
         return reverse('EventosNuevos')
-'''
+
 class CsvUploadView(generic.CreateView):
     model=CsvFile
     fields=['csv_file']
@@ -64,8 +65,8 @@ class CsvDownloadView(generic.ListView):
 
     def get_success_url(self):
         return reverse('EventosNuevos')
-'''
-'''
+
+
 def desascargarArchivo(request,pk):
     csv_file = CsvFile.objects.get(pk=pk)
     filename = csv_file.csv_file.name
@@ -76,7 +77,7 @@ def desascargarArchivo(request,pk):
     response = HttpResponse(path, content_type=mime_tipe)
     response['Content-Disposition'] = 'attachment; filename=%s' % filename
     return response
-'''  
+  
 
 
       

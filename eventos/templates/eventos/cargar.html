@@ -1,0 +1,17 @@
+{% extends "ProyectoWebApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<div style="color:white ;" class="container">
+   <form action="#"  method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.media }}
+      {{ form.as_p }}
+      <button class="btn btn-primary btn-sm" type="submit">Cargar</button>
+
+
+
+   </form>
+</div>
+
+{% endblock %}
