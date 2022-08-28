@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from .models import eventos 
+from .models import eventos , CsvFile
 
 # Register your models here.
 class eventosAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class eventosAdmin(admin.ModelAdmin):
 # propiedad
 
 admin.site.register(eventos, eventosAdmin)
+admin.site.register(CsvFile)

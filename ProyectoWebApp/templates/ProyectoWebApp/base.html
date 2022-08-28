@@ -58,8 +58,8 @@
           <li class="nav-item {% if request.path == '/calendario/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Calendario' %}">Calendario</a>
           </li>
-          <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Recursos</a>
+          <li class="nav-item {% if request.path == 'eventos/verarchivo/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'VerArchivo' %}">Recursos</a>
           </li>
           <li class="nav-item {% if request.path|slice:':6' == '/blog/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
