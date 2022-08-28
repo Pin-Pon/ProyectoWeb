@@ -1,15 +1,18 @@
 from django.urls import reverse
-from django.views import generic
-from django.shortcuts import render, HttpResponse
-from ProyectoWeb.ProyectoWeb.settings import BASE_DIR
-from ProyectoWeb.eventos.models import CsvFile
 from core.mixins import SuperUsuarioMixin
+from django.shortcuts import render
 import os
 import mimetypes
-from django.shortcuts import render
+from ProyectoWebApp import urls
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from eventos.models import eventos
-from django.views.generic import CreateView ,UpdateView , DeleteView
+from django.shortcuts import get_object_or_404,render
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views import generic
+from django.shortcuts import render
+
+from eventos.models import eventos, CsvFile
+
 from .forms import CrearEventoForm
 
 # Create your views here.

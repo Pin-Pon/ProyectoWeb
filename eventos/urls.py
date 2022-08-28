@@ -11,7 +11,8 @@ urlpatterns = [
     path("editar/<int:pk>/", views.Editar.as_view(), name="editar"),
     path("eliminar/<int:pk>/", views.Eliminar.as_view(), name="Eliminar"),
     path("cargar/", views.CsvUploadView.as_view(), name="Cargar"),
+    path("descargar/<int:pk>/", views.desascargarArchivo, name="Descargar"),
     path("verarchivo/", views.CsvDownloadView.as_view(), name="VerArchivo"),
-    path("descargar/<int:pk>/", views.desascargarArchivo.as_view(), name="Descargar"),
+    
     
 ]
