@@ -44,7 +44,8 @@ class eventos(models.Model):
         
           
 class CsvFile(models.Model):
-    csv_file = models.FileField(upload_to='documents')  
+    csv_file = models.FileField(upload_to='documents') 
+    titulo = models.CharField(max_length=255,default='Documento')
 
 
     def __str__(self):
