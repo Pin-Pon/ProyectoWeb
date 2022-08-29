@@ -14,7 +14,7 @@
 	<div class="row">
 
 
-{% for evento in events %}
+{% for evento in agendas %}
 <div class="col-md-4">
   <div class="card" style="width: 100% ; margin: 5px 5px;">
 	<img src="{{evento.imagen.url}}" class="card-img-top">
@@ -29,8 +29,9 @@
 	<div class="card-footer text-center">
 	
 		<br><br>
-        {% if user_participantes__is_paid %}
-		<a class="btn btn-success">{{evento cant_participantes}}</a> 
+      
+		<a class="btn btn-success">{{evento.cant_participantes }}</a> 
+		<a class="btn btn-success">Gracias por participar</a>
 	</div>
  </div>
 </div>

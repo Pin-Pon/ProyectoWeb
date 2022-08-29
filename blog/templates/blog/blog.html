@@ -3,6 +3,12 @@
 {% load static %}
 
 {% block content %}
+<div class="mt-2" style="width:15%; margin: auto; text-align: center; color: darkgreen;">
+	{% if user.es_admin or user.is_superuser %}
+	
+	<a href=" {% url 'CrearPost' %}   " class="btn btn-success">Deseas crear un Post Nuevo?</a>&nbsp; &nbsp; 
+	{% endif %}
+	</div>
 
 {% for post in posts %}   
 
@@ -15,12 +21,14 @@
             <h2 class="section-heading mb-4" >
               <span class="section-heading-lower" >{{ post.titulo}}</span>
               <span class="section-heading-upper">{{ post.contenido}}</span>
+			
               <!-- <span class="section-heading-upper">{{ post.categorias}}</span> -->
             </h2>
           <div style="text-align: left; font-size: 0.8em;">
 
             AUTOR: {{post.autor}}
 
+            
             
           </div>
           </div>
@@ -31,6 +39,7 @@
 
 
 {% endfor %}
+
 {% if is_paginated  %}
 	<div  class="mt-2" style="width:15%; margin: auto; text-align: center; color: darkgreen;" >
 		<ul class="pagination" style="color:darkgreen ;" >

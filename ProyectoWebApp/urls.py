@@ -15,7 +15,7 @@ urlpatterns = [
     # path('logout/',auth_views.LogoutView.as_view(template_name="ProyectoWebApp/inicio.html"), name="logout"),
     
     
-    path('calendario2/',views.calendario2, name="Calendario2"),
+    path('calendario2/',views.calendario2.as_view(), name="Calendario2"),
     path('calendario',views.calendario.as_view() , name="Calendario"),
     path('contacto',views.contacto, name="Contacto"),      
 ]

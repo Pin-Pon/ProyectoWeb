@@ -10,10 +10,20 @@
           <div class="intro">
             <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src= "{{evento.imagen.url}}" alt="" style="width: 50%;">
             <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-              <h2 class="section-heading mb-4" >
-                <span class="section-heading-lower" >{{ evento.titulo}}</span>
-                <span class="section-heading-upper">{{ evento.categoria}}</span>
-              </h2>
+              <h2>
+                <span class="section-heading-lower" >{{ evento.titulo}} </span>
+              </h2>    
+                <span class="section-heading-lower" >Te invitamos el: {{ evento.fecha}}</span>
+                <span class="section-heading-lower" >A las: {{ evento.hora}}</span>
+                <span class="section-heading-lower" >en: {{ evento.lugar}}</span>
+                <p class="mb-3">{{ evento.descripcion}}</p>
+                <div style="text-align: left; font-size: 0.8em;">
+
+                  INVITA: FUNDACIÓN PUEBLO
+      
+                  
+                </div>
+              
             </div>
           </div>
         </div>

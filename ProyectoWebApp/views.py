@@ -39,6 +39,16 @@ class calendario( ListView):
     def get_queryset(self):
         return eventos.objects.all().order_by('modalidad') 
 
+class calendario2( ListView):
+    template_name="ProyectoWebApp/calendario2.html"
+    model= eventos
+
+    context_object_name = "agendas"
+    paginate_by=3
+
+    def get_queryset(self):
+        return eventos.objects.all().order_by('modalidad')        
+
 
 
 
