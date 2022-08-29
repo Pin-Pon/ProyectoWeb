@@ -1,5 +1,5 @@
 from urllib import request
-from django.shortcuts import render ,HttpResponseRedirect
+from django.shortcuts import render 
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.urls import reverse
 from eventos.models import eventos
