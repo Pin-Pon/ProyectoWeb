@@ -16,7 +16,7 @@ urlpatterns = [
     
     
    
-    path('calendario',views.calendario, name="Calendario"),
+    path('calendario',views.calendario.as_view() , name="Calendario"),
     path('contacto',views.contacto, name="Contacto"),      
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) #mostrar la foto en el servidor

@@ -1,13 +1,16 @@
 {% extends "ProyectoWebApp/base.html" %}
 {% load static %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <div style="color:white ;" class="container">
    <form action="#"  method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.media }}
-      {{ form.as_p }}
-      <button class="btn btn-primary btn-sm" type="submit">Cargar</button>
+      {{ form.Titulo }}
+    
+      {{ form|crispy }}
+      <button class="btn btn-success btn-sm" type="submit">Cargar</button>
 
 
 

@@ -16,10 +16,27 @@ from eventos.models import eventos, CsvFile
 from .forms import CrearEventoForm
 
 # Create your views here.
+'''
 def evento(request):
     mostrar = eventos.objects.all()
     print(mostrar)
     return render(request, "eventos/eventos.html", {"mostrar":mostrar})
+'''
+class evento( ListView):
+    template_name="eventos/eventos.html"
+    model= eventos      
+    context_object_name = "mostrar"
+    paginate_by=1
+
+    def get_queryset(self):
+        return eventos.objects.all().order_by('fecha')
+
+
+
+
+
+
+
 
 class CrearEvento(SuperUsuarioMixin,LoginRequiredMixin,CreateView):
         model = eventos
@@ -47,9 +64,9 @@ class Eliminar(SuperUsuarioMixin,LoginRequiredMixin, DeleteView):
     def get_success_url(self, **kwargs):
         return reverse('EventosNuevos')
 
-class CsvUploadView(generic.CreateView):
+class CsvUploadView(SuperUsuarioMixin,generic.CreateView):
     model=CsvFile
-    fields=['csv_file']
+    fields=['csv_file','titulo']
     template_name='eventos/cargar.html'
 
     def get_queryset(self):
@@ -60,7 +77,7 @@ class CsvUploadView(generic.CreateView):
 
 class CsvDownloadView(generic.ListView):
     model=CsvFile
-    fields=['csv_file']
+    fields=['csv_file','titulo']
     template_name='eventos/descargar.html'
 
     def get_queryset(self):
