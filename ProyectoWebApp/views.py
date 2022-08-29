@@ -1,7 +1,11 @@
-from django.shortcuts import render, HttpResponse
+from urllib import request
+from django.shortcuts import render ,HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
+from django.urls import reverse
 from eventos.models import eventos
+from usuarios.models import  Usuario
 from django.views.generic import ListView
+
 #from eventos.models import eventos llevamos la importacion a la views de la app eventos propia
 # Create your views here.
 def inicio(request):
@@ -33,7 +37,12 @@ class calendario( ListView):
     paginate_by=3
 
     def get_queryset(self):
-        return eventos.objects.all().order_by('modalidad')  
+        return eventos.objects.all().order_by('modalidad') 
+
+
+
+
+
 
 # def blog(request):
 #     return render(request, "ProyectoWebApp/blog.html") la movemos a la appp como todas

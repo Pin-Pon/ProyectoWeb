@@ -35,7 +35,13 @@
 		
 	    {% endif %}
 		<br><br>
-		<a class="btn btn-success">Asistir</a> 
+		{% if user.is_authenticated %}
+		<a href="{% url 'Calendario2'%}" class="btn btn-success">Asistir</a>
+		<a  class="btn btn-success">{{evento.cant_participantes}}</a>  
+		{% else %}
+		<a href="{% url 'login'%}" class="btn btn-success">Asistir</a>
+		<a  class="btn btn-success">{{evento.cant_participantes}}</a>  
+		{% endif%}
 	</div>
  </div>
 </div>

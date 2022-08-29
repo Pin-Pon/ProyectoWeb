@@ -1,0 +1,74 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1 style="color:white ; margin: autos;">Hola {{user}} </h1>
+
+{% else %}
+<h1 style="color:white ; margin: autos;">Bienvenido!! </h1>
+{% endif%}
+<div class="container">
+	<div class="row">
+
+
+{% for evento in events %}
+<div class="col-md-4">
+  <div class="card" style="width: 100% ; margin: 5px 5px;">
+	<img src="{{evento.imagen.url}}" class="card-img-top">
+	<div class="card-body" style="text-align:center;">
+		<h7 class="card-title">{{evento.titulo}}</h7>
+		<p class="card-text">{{evento.categoria}}</p>
+
+		<!-- <button type="button" class="btn btn-success">Crear</button> -->
+		 
+	</div>
+
+	<div class="card-footer text-center">
+	
+		<br><br>
+        {% if user_participantes__is_paid %}
+		<a class="btn btn-success">{{evento cant_participantes}}</a> 
+	</div>
+ </div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+{% if is_paginated  %}
+<div  class="mt-2" style="width:15%; margin: auto; text-align: center; color: darkgreen;" >
+  <ul class="pagination" style="color:darkgreen ;" >
+	{% if page_obj.has_previous %}
+	<li class="pagina-item" style="color:darkgreen ;" >
+	  <a href="?page={{ page_obj.previous_page_number }}" class="page-link" style="color:darkgreen ;">Anterior</a>
+	</li>
+	{% else %}
+	<li class="pagina-item disabled">
+	  <a href="#" class="page-link">Anterior</a>
+	</li>
+	{% endif %}
+	{% for i in paginator.page_range %}
+	  <li class="pagina-item {% if page_obj.number == i %} active {% endif %}">
+		<a href="?page={{ i}}" class="page-link">{{ i}}</a>
+	  </li>
+	{% endfor %}	
+	{% if page_obj.has_next %}
+	  <li class="pagina-item">
+		<a href="?page={{ page_obj.next_page_number}}" class="page-link">Siguiente</a>
+	  </li>
+	{% else %}
+	<li class="pagina-item disabled">
+	  <a href="#" class="page-link">Siguiente</a>
+	</li>
+	{% endif %}
+  </ul>
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}
