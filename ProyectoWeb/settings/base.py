@@ -87,16 +87,7 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'PuebloNew',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+
     
 
 
@@ -137,6 +128,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL='/media/'
+STATICFILES_DIRS = (
+    os.path.join(os.path.dirname(BASE_DIR), "ProyectoWebApp/static"),
+)
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 # Default primary key field type

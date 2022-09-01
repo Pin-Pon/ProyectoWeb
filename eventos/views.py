@@ -3,7 +3,7 @@ from core.mixins import SuperUsuarioMixin
 from django.shortcuts import render
 import os
 import mimetypes
-from ProyectoWebApp import urls
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404,render
